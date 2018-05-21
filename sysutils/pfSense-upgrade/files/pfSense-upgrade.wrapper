@@ -18,7 +18,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-pfsense_upgrade=$(realpath $(dirname $0)/../libexec/$(basename $0))
+DefenseBolt_upgrade=$(realpath $(dirname $0)/../libexec/$(basename $0))
 lockfile="/tmp/$(basename $0).lock"
 
 if [ ! -f ${pfsense_upgrade} ]; then
