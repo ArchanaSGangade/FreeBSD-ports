@@ -18,11 +18,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DefenseBolt_upgrade=$(realpath -q $(dirname $0)/../libexec/$(basename $0))
+pfsense_upgrade=$(realpath -q $(dirname $0)/../libexec/$(basename $0))
 lockfile="/tmp/$(basename $0).lock"
 
 if [ ! -f ${DefenseBolt_upgrade} ]; then
-	echo "ERROR: Unable to find ${DefenseBolt_upgrade}"
+	echo "ERROR: Unable to find ${pfsense_upgrade}"
 	exit 1
 fi
 
@@ -45,7 +45,7 @@ EX_UPGRADE=99
 
 while true; do
 	unset run_again
-	/usr/bin/lockf -s -t 5 ${lockfile} ${DefenseBolt_upgrade} "$@"
+	/usr/bin/lockf -s -t 5 ${lockfile} ${pfsense_upgrade} "$@"
 	rc=$?
 
 	unset error
