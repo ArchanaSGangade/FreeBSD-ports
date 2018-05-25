@@ -21,7 +21,7 @@
 pfsense_upgrade=$(realpath -q $(dirname $0)/../libexec/$(basename $0))
 lockfile="/tmp/$(basename $0).lock"
 
-if [ ! -f ${DefenseBolt_upgrade} ]; then
+if [ ! -f ${pfsense_upgrade} ]; then
 	echo "ERROR: Unable to find ${pfsense_upgrade}"
 	exit 1
 fi
